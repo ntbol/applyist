@@ -10,7 +10,6 @@
 		exit;
 	}
 
-	$var_value = $_SESSION['listid'];
 
 	if(isset($_SESSION['listid'])){
 		$stmt = $pdo->prepare("SELECT * FROM listings WHERE id = ?");

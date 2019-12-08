@@ -16,6 +16,7 @@
 		<meta charset="utf-8">
 		<title>New Listing - Applyist</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/custom.css" type="text/css">
 	</head>
 	<body>
 		<div class="container">
@@ -54,7 +55,7 @@
 				</div>
 				<div class="row">
 					<div class="form-group col-12">
-						<input type="submit" name="submit" class="btn btn-primary btn-block" value="Submit">
+						<input type="submit" name="submit" class="btn btn-theme btn-block" value="Submit">
 					</div>
 				</div>
 			</form>		

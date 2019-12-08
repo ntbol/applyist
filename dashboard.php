@@ -29,28 +29,49 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?=$user['username']?>'s Dashboard - Applyist</title>
+	<title><?=ucwords($user['username'])?>'s Dashboard - Applyist</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/custom.css" type="text/css">
 </head>
 <body>
+ 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><h1 class="nav">applyist</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto "></ul>
+                <ul class="navbar-nav justify-content-end">
+                   <li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle small-header" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Hey, <?=ucwords($user['username'])?> !
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 5px">
+			        	<a class="dropdown-item" href="#">Change Password</a>
+			        	<div class="dropdown-divider"></div>
+			          	<form action="php/logout.php" method="post">
+							<button class="btn-block btn btn-danger">Logout</button>
+						</form>
+			        </div>
+			      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
 <div class="container">
 	<div class="row">
-		<div class="col-6">
-			<h1>Hello, <?=$user['username']?></h1>
-		</div>
-		<div class="col-6" align="right" style="padding-top: 15px;">
-			<form action="php/logout.php" method="post">
-				<button class="btn btn-danger">Logout</button>
-			</form>
+		<div class="col-3">
+			<a href="new.php" class="btn btn-theme btn-block">Add Job</a>
 		</div>
 	</div>
-
-<a href="new.php" class="btn btn-secondary">Add Job</a>
-<hr>
+	<hr>
 	
 
 <?php foreach ($listing as $list): ?>
-	<?php $var = $list['id'];?>
 	<div class="row">
 		<div class="col-6">
 			<h2><?=$list['title']?></h2>
@@ -58,8 +79,9 @@
 			<h5>Status: <b><?=ucwords($list['status'])?></b></h5>
 		</div>
 		<div class="col-6" align="right" style="padding-top: 15px">
+			<?php $myVar = $list['id'];?>
 			<form action="modify.php" method="post">
-				<?php $_SESSION['listid'] = $list['id']; ?>
+				<input type="hidden" name="listid" value="<?php echo $myVar; ?>">
 				<button class="btn btn-primary">Modify</button>
 			</form>
 		</div>
