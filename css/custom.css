@@ -38,3 +38,9 @@ body{
 	border-radius: 7px;
 	padding: 10px;
 }
+.floats{
+	border-radius: 7px;
+	background-color: #ECF0F1;
+	margin-bottom: 25px;
+	padding: 20px
+}

@@ -72,19 +72,20 @@
 	
 
 <?php foreach ($listing as $list): ?>
-	<div class="row">
-		<div class="col-6">
-			<h2><?=$list['title']?></h2>
-			<h5><b><?=$list['company']?></b> | <?=$list['location']?></h5>
-			<h5>Status: <b><?=ucwords($list['status'])?></b></h5>
-		</div>
-		<div class="col-6" align="right" style="padding-top: 15px">
-			<?php $myVar = $list['id'];?>
-			<form action="modify.php" method="post">
-				<input type="hidden" name="listid" value="<?php echo $myVar; ?>">
-				<button class="btn btn-primary">Modify</button>
-			</form>
-		</div>
+	<? $myVar = $list['id'] ?>
+	<div class="row floats">
+			<div class="col-6">
+				<h2><?=$list['title']?></h2>
+				<h5><b><?=$list['company']?></b> | <?=$list['location']?></h5>
+				<h5>Status: <b><?=ucwords($list['status'])?></b></h5>
+			</div>
+			<div class="col-6" align="right" style="padding-top: 15px">
+				<?php $myVar = $list['id'];?>
+				<form action="modify.php" method="get">
+					<input type="hidden" name="listid" value="<?php echo $myVar; ?>">
+					<button class="btn btn-primary">Modify</button>
+				</form>
+			</div>
 	</div>
 <?php endforeach; ?>
 

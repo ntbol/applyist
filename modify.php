@@ -11,11 +11,17 @@
 	}
 
 
-	if(isset($_SESSION['listid'])){
+
+	if(isset($_GET['listid'])){
 		$stmt = $pdo->prepare("SELECT * FROM listings WHERE id = ?");
-		$stmt->execute([$_SESSION['listid']]);
+		$stmt->execute([$_GET['listid']]);
 		$modify = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
+	if($_SESSION['user_id'] != $modify['userid']){
+		header('Location: dashboard.php');
+		exit;
+	}
 	?>
 	<!DOCTYPE html>
 	<html>
@@ -69,7 +75,7 @@
 			try {
 			$dbh = new PDO("mysql:host=$hostname;dbname=applyist",$username,$password);
 			$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
-			$id = $_SESSION['listid'];
+			$id = $_GET['listid'];
 			$title = htmlspecialchars($_POST['title']);
 			$company = htmlspecialchars($_POST['company']);
 			$location = htmlspecialchars($_POST['location']);
