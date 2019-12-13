@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
 
 	session_start();
 
@@ -30,7 +32,8 @@
 <head>
 	<meta charset="utf-8">
 	<title><?=ucwords($user['username'])?>'s Dashboard - Applyist</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	<link rel="stylesheet" href="css/custom.css" type="text/css">
 </head>
 <body>
@@ -64,32 +67,40 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-3">
+		<div class="col-md-3">
 			<a href="new.php" class="btn btn-theme btn-block">Add Job</a>
 		</div>
+		<div class="col-md-9"></div>
 	</div>
 	<hr>
-	
-
-<?php foreach ($listing as $list): ?>
 	<? $myVar = $list['id'] ?>
-	<div class="row floats">
-			<div class="col-6">
-				<h2><?=$list['title']?></h2>
-				<h5><b><?=$list['company']?></b> | <?=$list['location']?></h5>
-				<h5>Status: <b><?=ucwords($list['status'])?></b></h5>
+	<?php foreach ($listing as $list): ?>
+	<div class="floats">
+		<div class="row" style="display: table; width:100%;">
+			<div class="col-10" style="display: table-cell; vertical-align: middle;">
+				<h2 class="job-title"><?=$list['title']?></h2>
+				<h5 class="small-header"><span style="font-weight: 600"><?=$list['company']?></span>&nbsp;&nbsp;&nbsp;<span class="fas fa-map-marker-alt"></span> <?=$list['location']?>&nbsp;&nbsp;&nbsp;<span title="Date Applied On"><span class="far fa-calendar-alt"></span> <?=$list['date_applied']?></span></h5>
+				<h5 class="small-header" style="font-style: italic;">Status: <span style="font-weight: 600"><?=ucwords($list['status'])?></span></h5>
 			</div>
-			<div class="col-6" align="right" style="padding-top: 15px">
+			<div class="col-2" style="display: table-cell; vertical-align: middle;">
 				<?php $myVar = $list['id'];?>
 				<form action="modify.php" method="get">
 					<input type="hidden" name="listid" value="<?php echo $myVar; ?>">
-					<button class="btn btn-primary">Modify</button>
+					<button class="btn btn-theme btn-block">Modify</button>
 				</form>
 			</div>
+		</div>
 	</div>
-<?php endforeach; ?>
-
+	<?php endforeach; ?>
+	<?php
+		if($list === null){
+			echo "<div align='center'><i>Oh no... It apears you have applied to no jobs :(<br><a href='new.php'>Add one here</a></i></div>";
+		} 
+	?>
 </div>
+
+
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
