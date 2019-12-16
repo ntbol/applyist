@@ -58,15 +58,15 @@
 			<form action="" method="post">
 				Position Title:
 				<div class="form-group">
-					<input type="text" name="title" id="title"  class="form-control" placeholder="Position Title">
+					<input type="text" name="title" id="title"  class="form-control" placeholder="Senior Dog Walker">
 				</div>
 				Company:
 				<div class="form-group">
-					<input type="text" name="company" id="company"  class="form-control" placeholder="Company">
+					<input type="text" name="company" id="company"  class="form-control" placeholder="Google">
 				</div>
 				Location:
 				<div class="form-group">
-					<input type="text" name="location" id="location" class="form-control" placeholder="Location">
+					<input type="text" name="location" id="location" class="form-control" placeholder="Palo Alto, CA">
 				</div>
 				Date Applied:
 				<div class="form-group">
@@ -82,7 +82,7 @@
 						    <option value="applied">Applied</option>
 						    <option value="interviewing">Interviewing</option>
 						    <option value="under review">Under Review</option>
-						    <option value="got an offer">Got and Offer</option>
+						    <option value="offer received">Offer Received</option>
 						    <option value="rejected">Rejected</option>
 					  </select>
 				</div>

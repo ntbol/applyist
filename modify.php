@@ -93,7 +93,7 @@
 						    <option value="applied">Applied</option>
 						    <option value="interviewing">Interviewing</option>
 						    <option value="under review">Under Review</option>
-						    <option value="got an offer">Got and Offer</option>
+						    <option value="offer received">Offer Received</option>
 						    <option value="rejected">Rejected</option>
 					  </select>
 				</div>
@@ -125,6 +125,7 @@
 			$sql = "UPDATE listings SET title='$title', company='$company', location='$location', link='$link', status='$status' WHERE id='$id'";
 				if ($dbh->query($sql)) {
 				echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
+				header('dashboard.php');
 				}
 				else{
 				echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
