@@ -69,3 +69,73 @@ body{
 	border-top-left-radius: 7px;
 	border-bottom-left-radius: 7px;
 }
+
+.btn-applied{
+	border-bottom: 5px solid #BDC3C7;
+	border-radius: 5px;
+
+}
+.btn-applied:hover{
+	background: #BDC3C7;
+	border-radius: 5px;
+	color: white;
+}
+
+.btn-under-review{
+	border-bottom: 5px solid #F1C40F;
+	border-radius: 5px;
+
+}
+.btn-under-review:hover{
+	background: #F1C40F;
+	border-radius: 5px;
+	color: white;
+}
+
+.btn-interviewing{
+	border-bottom: 5px solid #3498DB;
+	border-radius: 5px;
+
+}
+.btn-interviewing:hover{
+	background: #3498DB;
+	border-radius: 5px;
+	color: white;
+}
+
+.btn-offer-received{
+	border-bottom: 5px solid #2ECC71;
+	border-radius: 5px;
+
+}
+.btn-offer-received:hover{
+	background: #2ECC71;
+	border-radius: 5px;
+	color: white;
+}
+
+.btn-rejected{
+	border-bottom: 5px solid #E74C3C;
+	border-radius: 5px;
+
+}
+.btn-rejected:hover{
+	background: #E74C3C;
+	border-radius: 5px;
+	color: white;
+}
+
+.btn-show{
+	border-bottom: 5px solid black;
+	border-radius: 5px;
+}
+.btn-show:hover{
+	background: black;
+	border-radius: 5px;
+	color: white;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
