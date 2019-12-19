@@ -48,10 +48,10 @@ ini_set('display_errors', 0);
                 <ul class="navbar-nav justify-content-end">
                    <li class="nav-item dropdown">
 			        <a class="nav-link dropdown-toggle small-header" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Hey, <?=ucwords($user['username'])?> !
+			          <img src="img/<?=$user['profile_img']?>" class="profile"> <span style="font-weight: 600"><?=ucwords($user['username'])?></span>
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 5px">
-			        	<a class="dropdown-item" href="#">Change Password</a>
+			        	<a class="dropdown-item" href="profile.php">Update Profile</a>
 			        	<div class="dropdown-divider"></div>
 			          	<form action="php/logout.php" method="post">
 							<button class="btn-block btn btn-danger">Logout</button>
@@ -109,7 +109,7 @@ ini_set('display_errors', 0);
 					<?php $myVar = $list['id'];?>
 					<form action="modify.php" method="get">
 						<input type="hidden" name="listid" value="<?php echo $myVar; ?>">
-						<button class="btn btn-theme btn-block">Modify</button>
+						<button class="btn btn-theme ">Modify</button>
 					</form>
 				</div>
 			</div>
