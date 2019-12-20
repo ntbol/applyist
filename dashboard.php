@@ -109,7 +109,7 @@ ini_set('display_errors', 0);
 					<?php $myVar = $list['id'];?>
 					<form action="modify.php" method="get">
 						<input type="hidden" name="listid" value="<?php echo $myVar; ?>">
-						<button class="btn btn-theme ">Modify</button>
+						<button class="btn btn-theme btn-block">Modify</button>
 					</form>
 				</div>
 			</div>

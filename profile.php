@@ -6,6 +6,9 @@ ini_set('display_errors', 0);
 
 	require 'php/connect.php';
 
+	//Require password hasher
+	require 'lib/password.php';
+
 	//Check if user is logged in
 	if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
 		header('Location: login.php');
@@ -85,6 +88,41 @@ ini_set('display_errors', 0);
 		echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
 	}
 
+		//Update Password
+	if ($_POST['newPassword'] == $_POST['confirmPassword']){
+		if(isset($_POST["updatePass"])){
+			$userid = $_SESSION['user_id'];
+
+			
+			$password = $_POST['confirmPassword'];
+
+
+			$passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
+
+			$hostname='localhost:3308';
+			$username='root';
+			$password='';
+			try {
+			$dbh = new PDO("mysql:host=$hostname;dbname=applyist",$username,$password);
+			$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
+			$sql = "UPDATE users SET password = '$passwordHash' WHERE id = '$userid'";
+				if ($dbh->query($sql)) {
+ 					header('Location: '.$_SERVER['REQUEST_URI']);
+				}
+				else{
+				echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
+				}			
+			$dbh = null;
+			}
+			catch(PDOException $e)
+			{
+			echo $e->getMessage();
+			}
+		}
+	} else {
+		echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
+	}
+
 
 ?>
 
@@ -92,7 +130,7 @@ ini_set('display_errors', 0);
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?=ucwords($user['username'])?>'s Dashboard - Applyist</title>
+	<title><?=ucwords($user['username'])?>'s Profile - Applyist</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	<link rel="stylesheet" href="css/custom.css" type="text/css">
