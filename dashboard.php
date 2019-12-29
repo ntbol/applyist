@@ -22,7 +22,7 @@ ini_set('display_errors', 0);
 
 	//Pull users jobs from ID
 	$id = $_SESSION['user_id'];
-		$stmtlist = $pdo->prepare("SELECT * FROM listings WHERE userid='$id' ORDER BY id");
+		$stmtlist = $pdo->prepare("SELECT * FROM listings WHERE userid='$id' ORDER BY date_applied DESC");
 		$stmtlist->execute();
 		$listing = $stmtlist->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -37,46 +37,19 @@ ini_set('display_errors', 0);
 	<link rel="stylesheet" href="css/custom.css" type="text/css">
 </head>
 <body>
- 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#"><h1 class="nav">applyist</h1></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto "></ul>
-                <ul class="navbar-nav justify-content-end">
-                   <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle small-header" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          <img src="img/<?=$user['profile_img']?>" class="profile"> <span style="font-weight: 600"><?=ucwords($user['username'])?></span>
-			        </a>
-			        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 5px">
-			        	<a class="dropdown-item" href="profile.php">Update Profile</a>
-			        	<div class="dropdown-divider"></div>
-			          	<form action="php/logout.php" method="post">
-							<button class="btn-block btn btn-danger">Logout</button>
-						</form>
-			        </div>
-			      </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-
+<?php include('php/nav.php'); ?>
 <div class="container">
 	<div class="row">
 		<div class="col-md-3">
 			<a href="new.php" class="btn btn-theme btn-block">Add Job</a>
 		</div>
 		<div class="col-md-9" align="right">
-			<h5 class="small-header" style="font-weight: 600;"><a href="#" onclick="toggle_visibility('foo');">Filter <span class="fas fa-caret-down"></span></a></h5>
+			<h5 class="small-header" style="font-weight: 600;"><a href="#" onclick="toggle_visibility('foo');" class="theme-link">Filter <span class="fas fa-caret-down"></span></a></h5>
 		</div>
 	</div>
-	<div id="foo" class="row" style="padding-top: 20px;"> 
+	<div id="foo" class="row" style="padding-top: 20px;display: none;">
 		<div class="col-12">
-			<div class="floats" style="margin-bottom: 0px; padding: 10px 0px 10px 0px" align="center">
+			<div class="floats" style="margin-bottom: 0px; padding: 10px 0px 10px 0px;" align="center">
 				<button class="active btn btn-show" data-filter="box">Show All</button>
 	            <button class="btn btn-applied" data-filter="applied">Applied</button>
 	            <button class="btn btn-under-review" data-filter="under-review">Under Review</button>
@@ -94,7 +67,7 @@ ini_set('display_errors', 0);
 		$status = $list['status'];
 		$trimmedStatus = str_replace(' ', '-', trim($status));
 	?>
-	<div id="parent" >
+	<div id="parent">
 		<div class="floats box <?=$trimmedStatus?>">
 			<div class="row" style="display: table; width:100%;">
 				<div class="statusColor">
@@ -102,8 +75,17 @@ ini_set('display_errors', 0);
 				</div>
 				<div class="col-10" style="display: table-cell; vertical-align: middle;">
 					<h2 class="job-title"><?=$list['title']?></h2>
-					<h5 class="small-header"><span style="font-weight: 600"><?=$list['company']?></span>&nbsp;&nbsp;&nbsp;<span class="fas fa-map-marker-alt"></span> <?=$list['location']?>&nbsp;&nbsp;&nbsp;<span title="Date Applied On"><span class="far fa-calendar-alt"></span> <?=$list['date_applied']?></span></h5>
-					<h5 class="small-header" style="font-style: italic;">Status: <span style="font-weight: 600; font-style: normal;"><?=ucwords($list['status'])?></span></h5>
+					<h5 class="small-header"><span class="fas fa-building"></span> <span style="font-weight: 600"><?=$list['company']?></span>&nbsp;&nbsp;&nbsp;<span class="fas fa-map-marker-alt"></span> <?=$list['location']?>&nbsp;&nbsp;&nbsp;<span title="Date Applied On"><span class="far fa-calendar-alt"></span> <?=$list['date_applied']?></span></h5>
+					<h5 class="small-header" style="font-style: italic;">
+                        <span class="fas fa-rocket"></span> Status: <span style="font-weight: 600; font-style: normal;"><?=ucwords($list['status'])?></span> &nbsp;<span class="fas fa-eye"></span>
+                            <?php
+                                if($list['link'] == null){
+                                    echo "<a href='modify.php?listid=" . $list['id'] . "' class='theme-link'>Please Link Original Job</a>";
+                                } else {
+                                    echo "<a href=" . $list['link'] . "  class='theme-link' target='_blank'>View Status</a>";
+                                }
+                            ?>
+                    </h5>
 				</div>
 				<div class="col-2" style="display: table-cell; vertical-align: middle;">
 					<?php $myVar = $list['id'];?>

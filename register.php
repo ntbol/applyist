@@ -59,25 +59,53 @@ if(isset($_POST['register'])){
 	<meta charset="UTF-8">
 	<title>Register a New Account - Applyist</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="css/custom.css" type="text/css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.php"><h1 class="nav">applyist</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto "></ul>
+                <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item">
+                        <a href="index.php" class="nav-link small-text-bold ">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.php" class="nav-link small-text-bold active">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="register.php" class="nav-link small-text-bold ">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 	<div class="container">
-		<h1>Register</h1>
-		<form action="register.php" method="post">
-			<div class="form-group">
-				<input type="text"  id="email" name="email" placeholder="email address" class="form-control">
-			</div>
-			<div class="form-group">
-				<input type="text"  id="username" name="username" placeholder="username" class="form-control">
-			</div>
-			<div class="form-group">
-				<input type="password" id="password" name="password" placeholder="password" class="form-control">
-			</div>
-			<div class="form-group">
-				<input type="submit" name="register" value="register" class="btn btn-primary btn-block">
-			</div>
-		</form>
-		<p>Have an account? <a href="login.php">Login Here</a>
+        <div class="row">
+            <div class="col-md-6">
+            <h1 class="job-title">Register</h1>
+            <form action="register.php" method="post">
+                <div class="form-group">
+                    <input type="text"  id="email" name="email" placeholder="email address" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text"  id="username" name="username" placeholder="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="register" value="Register" class="btn btn-theme btn-block">
+                </div>
+            </form>
+                <p>Have an account? <a href="login.php">Login Here</a></p>
+            </div>
+        </div>
 	</div>
 
 

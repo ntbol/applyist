@@ -1,9 +1,9 @@
 <?php
 session_start();
 if(isset($_POST["remove"])){
-	$hostname='localhost:3308';
-	$username='root';
-	$password='';
+    $hostname='localhost:3308';
+    $username='apply';
+    $password='P@$$word';
 	try {
 	$dbh = new PDO("mysql:host=$hostname;dbname=applyist",$username,$password);
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

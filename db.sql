@@ -6,11 +6,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `username` (`username`)
 
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8  COLLATE=utf8_unicode_ci AUTO_INCREMENT;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8  COLLATE=utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `listings` (
 	`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-	'title' varchar(255) NOT NULL,
+	`title` varchar(255) NOT NULL,
 	`company` varchar(255) NOT NULL,
 	`location` varchar(255) NOT NULL,
 	`link` varchar(1000) NULL,

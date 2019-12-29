@@ -26,80 +26,61 @@
 		<link rel="stylesheet" href="css/custom.css" type="text/css">
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	        <div class="container">
-	            <a class="navbar-brand" href="dashboard.php"><h1 class="nav">applyist</h1></a>
-	            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	                <span class="navbar-toggler-icon"></span>
-	            </button>
-	            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	                <ul class="navbar-nav mr-auto "></ul>
-	                <ul class="navbar-nav justify-content-end">
-	                   <li class="nav-item dropdown">
-				        <a class="nav-link dropdown-toggle small-header" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				          Hey, <?=ucwords($user['username'])?> !
-				        </a>
-				        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="padding: 5px">
-				        	<a class="dropdown-item" href="#">Change Password</a>
-				        	<div class="dropdown-divider"></div>
-				          	<form action="php/logout.php" method="post">
-								<button class="btn-block btn btn-danger">Logout</button>
-							</form>
-				        </div>
-				      </li>
-	                </ul>
-	            </div>
-	        </div>
-	    </nav>
+    <?php include('php/nav.php'); ?>
 		<div class="container">
 			<p><a href="dashboard.php" style="color: black!important"><span class="fas fa-chevron-left"></span> Back to Dashboard</a></p>
-			<h1>New Job</h1>
-			<hr>
-			<form action="" method="post">
-				Position Title:
-				<div class="form-group">
-					<input type="text" name="title" id="title"  class="form-control" placeholder="Senior Dog Walker">
-				</div>
-				Company:
-				<div class="form-group">
-					<input type="text" name="company" id="company"  class="form-control" placeholder="Google">
-				</div>
-				Location:
-				<div class="form-group">
-					<input type="text" name="location" id="location" class="form-control" placeholder="Palo Alto, CA">
-				</div>
-				Date Applied:
-				<div class="form-group">
-					<input type="date" name="date" id="date" class="form-control">
-				</div>
-				Link to Posting:
-				<div class="form-group">
-					<input type="text" name="link" id="link" class="form-control" placeholder="Link to Posting">
-				</div>
-				Current Status:
-				<div class="form-group">
-					  <select name="status" id="status" class="form-control">
-						    <option value="applied">Applied</option>
-						    <option value="interviewing">Interviewing</option>
-						    <option value="under review">Under Review</option>
-						    <option value="offer received">Offer Received</option>
-						    <option value="rejected">Rejected</option>
-					  </select>
-				</div>
+			<h1 class="job-title">Add A Job</h1>
+			<form action="" method="post" autocomplete="on">
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <span class="form-info">Position Title:</span>
+                        <input type="text" name="title" id="title"  class="form-control-theme" placeholder="Senior Dog Walker">
+                    </div>
+                    <div class="col-md-6">
+                        <span class="form-info">Company:</span>
+                        <input type="text" name="company" id="company"  class="form-control-theme" placeholder="Google">
+                    </div>
+                </div>
+				<div class="form-group row">
+                    <div class="col-md-6">
+                        <span class="form-info">Location:</span>
+                        <input type="text" name="location" id="location" class="form-control-theme" placeholder="Palo Alto, CA">
+                    </div>
+                    <div class="col-md-6">
+                        <span class="form-info">Date Applied:</span>
+                        <input type="date" name="date" id="date" class="form-control-theme">
+                    </div>
+                </div>
+				<div class="form-group row">
+                    <div class="col-md-6">
+                        <span class="form-info">Link to Posting:</span>
+					    <input type="text" name="link" id="link" class="form-control-theme" placeholder="Link to Posting">
+                    </div>
+                    <div class="col-md-6">
+                        <span class="form-info">Current Status:</span>
+                        <select name="status" id="status" class="form-control-theme">
+                            <option value="applied">Applied</option>
+                            <option value="interviewing">Interviewing</option>
+                            <option value="under review">Under Review</option>
+                            <option value="offer received">Offer Received</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
 				<div class="row">
 					<div class="form-group col-12">
 						<input type="submit" name="submit" class="btn btn-theme btn-block" value="Submit">
 					</div>
 				</div>
 			</form>		
-		</div>
+		</form>
 		<?php
 		if(isset($_POST["submit"])){
 			$userid = $_SESSION['user_id'];
 
-			$hostname='localhost:3308';
-			$username='root';
-			$password='';
+            $hostname='localhost:3308';
+            $username='apply';
+            $password='P@$$word';
 			try {
 			$dbh = new PDO("mysql:host=$hostname;dbname=applyist",$username,$password);
 			$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
