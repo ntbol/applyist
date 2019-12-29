@@ -213,3 +213,8 @@ body{
 .theme-link{
 	color: #6f7175!important;
 }
+
+.hero{
+	background-image: url("../img/blob-shape.svg");
+	height: 1500px;
+}

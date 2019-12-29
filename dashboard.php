@@ -75,9 +75,9 @@ ini_set('display_errors', 0);
 				</div>
 				<div class="col-10" style="display: table-cell; vertical-align: middle;">
 					<h2 class="job-title"><?=$list['title']?></h2>
-					<h5 class="small-header"><span class="fas fa-building"></span> <span style="font-weight: 600"><?=$list['company']?></span>&nbsp;&nbsp;&nbsp;<span class="fas fa-map-marker-alt"></span> <?=$list['location']?>&nbsp;&nbsp;&nbsp;<span title="Date Applied On"><span class="far fa-calendar-alt"></span> <?=$list['date_applied']?></span></h5>
+					<h5 class="small-header"><span class="far fa-building"></span> <span style="font-weight: 600"><?=$list['company']?></span>&nbsp;&nbsp;&nbsp;<span class="fas fa-map-marker-alt"></span> <?=$list['location']?>&nbsp;&nbsp;&nbsp;<span title="Date Applied On"><span class="far fa-calendar-alt"></span> Applied on : <?=$list['date_applied']?></span></h5>
 					<h5 class="small-header" style="font-style: italic;">
-                        <span class="fas fa-rocket"></span> Status: <span style="font-weight: 600; font-style: normal;"><?=ucwords($list['status'])?></span> &nbsp;<span class="fas fa-eye"></span>
+                        <span class="far fa-clock"></span> Status: <span style="font-weight: 600; font-style: normal;"><?=ucwords($list['status'])?></span> &nbsp;<span class="far fa-eye"></span>
                             <?php
                                 if($list['link'] == null){
                                     echo "<a href='modify.php?listid=" . $list['id'] . "' class='theme-link'>Please Link Original Job</a>";
