@@ -90,6 +90,7 @@ if(isset($_POST['login'])){
                 </div>
             </form>
             <p>Dont have an account? <a href="register.php">Register Here</a></p>
+            <p><a href="forgot.php">Forgot Password?</a></p>
             </div>
         </div>
 	</div>
