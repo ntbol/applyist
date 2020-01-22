@@ -2,15 +2,11 @@
 
 session_start();
 
-
 //Hashing file
 require 'lib/password.php';
 
-
 //MYSQL DB connection
 require 'php/connect.php';
-
-
 
 if(isset($_POST['login'])){
     
@@ -35,7 +31,7 @@ if(isset($_POST['login'])){
     if($user === false){
         //Could not find a user with that username!
         //PS: You might want to handle this error in a more user-friendly manner!
-        die('Incorrect username / password combination!');
+        header('Location: php/error.php');
     } else{
         //User account found. Check to see if the given password matches the
         //password hash that we stored in our users table.
@@ -56,7 +52,7 @@ if(isset($_POST['login'])){
             
         } else{
             //$validPassword was FALSE. Passwords do not match.
-            die('Incorrect username / password combination!');
+            header('Location: php/error.php');
         }
     }
     
@@ -94,9 +90,6 @@ if(isset($_POST['login'])){
             </div>
         </div>
 	</div>
-
-
-
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

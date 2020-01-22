@@ -232,7 +232,7 @@ body{
 	letter-spacing: -1px;
 	z-index: -5;
 	position: relative;
-	font-size: 80px;
+	font-size: 65px;
 }
 .navbar-trans {
   background: transparent!important;
@@ -242,7 +242,6 @@ body{
 }
 
 #header {
-    overflow: hidden;
     height:100vh;
     background-image: url('../img/test.svg');
     background-repeat: no-repeat;

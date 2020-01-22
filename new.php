@@ -4,6 +4,9 @@
 
 	require 'php/connect.php';
 
+	//Assigns user id to a variable for later use
+    $userid = $_SESSION['user_id'];
+
 	//Check if user is logged in
 	if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
 		header('Location: login.php');
@@ -19,34 +22,27 @@
 
 	//Adds record
     if(isset($_POST["submit"])){
-        $userid = $_SESSION['user_id'];
-
-        $hostname='localhost:3308';
-        $username='apply';
-        $password='P@$$word';
         try {
-            $dbh = new PDO("mysql:host=$hostname;dbname=applyist",$username,$password);
-            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO listings (title, company, location, link, status, userid, date_applied)
                 VALUES ('".$_POST["title"]."','".$_POST["company"]."','".$_POST["location"]."','".$_POST["link"]."','".$_POST["status"]."','".$userid."','".$_POST["date"]."')";
-            if ($dbh->query($sql)) {
+            if ($pdo->query($sql)) {
                 echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
                 header ('Location: dashboard.php');
             }
-            else{
+            else {
                 echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
             }
-            $dbh = null;
+            $pdo = null;
         }
-        catch(PDOException $e)
-        {
+        catch(PDOException $e) {
             echo $e->getMessage();
         }
         header ('Location: dashboard.php');
     }
-	?>
-	<!DOCTYPE html>
-	<html>
+?>
+<!DOCTYPE html>
+<html>
 	<head>
 		<meta charset="utf-8">
 		<title>New Listing - Applyist</title>
@@ -107,4 +103,4 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	</body>
-	</html>
+</html>

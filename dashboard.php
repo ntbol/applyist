@@ -1,17 +1,16 @@
 <?php
-error_reporting(0);
-ini_set('display_errors', 0);
+    error_reporting(0);
+    ini_set('display_errors', 0);
 
 	session_start();
 
 	require 'php/connect.php';
 
 	//Check if user is logged in
-	if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
-		header('Location: login.php');
-		exit;
-	}
-
+	if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])) {
+        header('Location: login.php');
+        exit;
+    }
 
 	//Pull username from ID
 	if (isset($_SESSION['user_id'])) {
@@ -69,7 +68,7 @@ ini_set('display_errors', 0);
 	?>
 	<div id="parent">
 		<div class="floats box <?=$trimmedStatus?>">
-			<div class="row" style="display: table; width:100%;">
+			<div class="row hidden-sm" style="display: table; width:100%;">
 				<div class="statusColor">
 					<div class="status-tag"><span class="invisible"><?=$list['status']?></span></div>
 				</div>
