@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 
 	require 'php/connect.php';
@@ -10,20 +9,18 @@
 		exit;
 	}
 
-
-
 	if(isset($_GET['listid'])){
 		$stmt = $pdo->prepare("SELECT * FROM listings WHERE id = ?");
 		$stmt->execute([$_GET['listid']]);
 		$modify = $stmt->fetch(PDO::FETCH_ASSOC);
 }
-
+    //Restricts access based on user id
 	if($_SESSION['user_id'] != $modify['userid']){
 		header('Location: dashboard.php');
 		exit;
 	}
 
-		//Pull username from ID
+	//Pull username from ID
 	if (isset($_SESSION['user_id'])) {
 		$stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');
 		$stmt->execute([$_SESSION['user_id']]);
@@ -32,12 +29,8 @@
 
     //Updates record
     if (isset($_POST["update"])) {
-        $hostname = 'localhost:3308';
-        $username = 'apply';
-        $password = 'P@$$word';
         try {
-            $dbh = new PDO("mysql:host=$hostname;dbname=applyist", $username, $password);
-            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
             $id = $_GET['listid'];
             $title = htmlspecialchars($_POST['title']);
             $company = htmlspecialchars($_POST['company']);
@@ -45,14 +38,14 @@
             $link = htmlspecialchars($_POST['link']);
             $status = htmlspecialchars($_POST['status']);
             $sql = "UPDATE listings SET title='$title', company='$company', location='$location', link='$link', status='$status' WHERE id='$id'";
-            if ($dbh->query($sql)) {
+            if ($pdo->query($sql)) {
                 echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
                 header('Location: dashboard.php');
                 exit;
             } else {
                 echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
             }
-            $dbh = null;
+            $pdo = null;
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
@@ -61,28 +54,22 @@
 
     // Removes record
     if (isset($_POST["remove"])) {
-        $hostname = 'localhost:3308';
-        $username = 'root';
-        $password = '';
+        $id = $_GET['listid'];
         try {
-            $dbh = new PDO("mysql:host=$hostname;dbname=applyist", $username, $password);
-            $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $id = $_GET['listid'];
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "DELETE FROM listings WHERE id = '$id'";
-            $dbh->exec($sql);
+            $pdo->exec($sql);
             echo "Record deleted successfully";
             header('Location: dashboard.php');
         } catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }
-        $dbh = null;
+        $pdo = null;
         header('Location: dashboard.php');
     }
-
-
 ?>
-	<!DOCTYPE html>
-	<html>
+<!DOCTYPE html>
+<html>
 	<head>
 		<meta charset="utf-8">
 		<title>Modify <?=$modify['title']?> - Applyist</title>

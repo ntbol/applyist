@@ -5,11 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forgot.php" beforeDir="false" afterPath="$PROJECT_DIR$/forgot.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new.php" beforeDir="false" afterPath="$PROJECT_DIR$/new.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/modify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pending.php" beforeDir="false" afterPath="$PROJECT_DIR$/pending.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/regnav.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/regnav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +77,10 @@
       <workItem from="1579526910594" duration="174000" />
       <workItem from="1579549042664" duration="1181000" />
       <workItem from="1579666955864" duration="3055000" />
+      <workItem from="1579709273615" duration="211000" />
+      <workItem from="1579755291014" duration="70000" />
+      <workItem from="1579786325469" duration="3285000" />
+      <workItem from="1579925512613" duration="763000" />
     </task>
     <servers />
   </component>
@@ -82,6 +88,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2240" y="314" key="FileChooserDialogImpl" timestamp="1579737354469">
+      <screen x="1920" y="-387" width="1080" height="1890" />
+    </state>
+    <state x="2240" y="314" key="FileChooserDialogImpl/0.0.1920.1050/1920.-387.1080.1890@1920.-387.1080.1890" timestamp="1579737354469" />
     <state x="2294" y="478" key="NewPhpFileDialog" timestamp="1579649728978">
       <screen x="1920" y="-387" width="1080" height="1890" />
     </state>
@@ -90,10 +100,10 @@
       <screen x="1920" y="-387" width="1080" height="1890" />
     </state>
     <state x="2136" y="383" key="com.intellij.ide.util.TipDialog/0.0.1920.1050/1920.-387.1080.1890@1920.-387.1080.1890" timestamp="1579666976126" />
-    <state x="619" y="0" width="877" height="1150" maximized="true" key="dock-window-1" timestamp="1579649892097">
+    <state x="828" y="0" width="868" height="1150" maximized="true" key="dock-window-1" timestamp="1579925844627">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="619" y="0" width="877" height="1150" maximized="true" key="dock-window-1/0.0.1920.1050/1920.-387.1080.1890@1920.-387.1080.1890" timestamp="1579649892097" />
+    <state x="828" y="0" width="868" height="1150" maximized="true" key="dock-window-1/0.0.1920.1050/1920.-387.1080.1890@1920.-387.1080.1890" timestamp="1579925844627" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
