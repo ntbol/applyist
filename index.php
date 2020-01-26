@@ -14,7 +14,7 @@
         <div>
             <div class="container">
                 <div class="row">
-                    <div class="title col-md-5" style="padding-top: 35vh">
+                    <div class="title col-lg-5 col-md-12" style="padding-top: 35vh">
                         <h1 class="big" align="left" style="z-index: 1">
                             Organize Your<br>Job Search.
                         </h1>
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="col-md-1"></div>
-                    <div class="col-lg-6 hidden-sm hidden-xs hidden-md" style="padding-top: 28vh">
+                    <div class="col-lg-6 d-none d-lg-block" style="padding-top: 28vh">
                         <img src="img/person.svg" width="100%">
                     </div>
                 </div>

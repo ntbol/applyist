@@ -4,14 +4,8 @@
     <list default="true" id="0eadd3f6-8d1f-4929-9bb1-124fc3001b9d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modify.php" beforeDir="false" afterPath="$PROJECT_DIR$/modify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pending.php" beforeDir="false" afterPath="$PROJECT_DIR$/pending.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/regnav.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/regnav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/indexnav.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/indexnav.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +74,8 @@
       <workItem from="1579709273615" duration="211000" />
       <workItem from="1579755291014" duration="70000" />
       <workItem from="1579786325469" duration="3285000" />
-      <workItem from="1579925512613" duration="763000" />
+      <workItem from="1579925512613" duration="803000" />
+      <workItem from="1580046804740" duration="1761000" />
     </task>
     <servers />
   </component>

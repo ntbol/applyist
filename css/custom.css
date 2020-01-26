@@ -248,7 +248,7 @@ body{
 }
 
 #header {
-    height:100vh;
+    height:1000px;
     background-image: url('../img/test.svg');
     background-repeat: no-repeat;
     background-position: right;
