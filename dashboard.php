@@ -42,19 +42,33 @@
                 <div class="col-md-3">
                     <a href="new.php" class="btn btn-theme btn-block">Add Job</a>
                 </div>
-                <div class="col-md-9" align="right">
+                <div class="col-md-9" align="right" style="margin-top:15px">
                     <h5 class="small-header" style="font-weight: 600;"><a href="#" onclick="toggle_visibility('foo');" class="theme-link">Filter <span class="fas fa-caret-down"></span></a></h5>
                 </div>
             </div>
             <div id="foo" class="row" style="padding-top: 20px;display: none;">
                 <div class="col-12">
                     <div class="floats" style="margin-bottom: 0px; padding: 10px 0px 10px 0px;" align="center">
-                        <button class="active btn btn-show" data-filter="box">Show All</button>
-                        <button class="btn btn-applied" data-filter="applied">Applied</button>
-                        <button class="btn btn-under-review" data-filter="under-review">Under Review</button>
-                        <button class="btn btn-interviewing" data-filter="interviewing">Interviewing</button>
-                        <button class="btn btn-offer-received" data-filter="offer-received">Offer Received</button>
-                        <button class="btn btn-rejected" data-filter="rejected">Rejected</button>
+                        <div class="row" style="padding: 0px 10px 0px 10px;">
+                            <div class="col-lg-4 col-md-4 col-xl-2">
+                                <button class="active btn btn-show btn-block" data-filter="box">Show All</button>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xl-2">
+                                <button class="btn btn-applied btn-block" data-filter="applied">Applied</button>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xl-2">
+                                <button class="btn btn-under-review btn-block" data-filter="under-review">Under Review</button>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xl-2">
+                                <button class="btn btn-interviewing btn-block" data-filter="interviewing">Interviewing</button>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xl-2">
+                                <button class="btn btn-offer-received btn-block" data-filter="offer-received">Offer Received</button>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-xl-2">
+                                <button class="btn btn-rejected btn-block" data-filter="rejected">Rejected</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
