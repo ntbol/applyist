@@ -97,9 +97,11 @@ body{
 }
 
 .btn-applied{
-	border-bottom: 5px solid #BDC3C7;
+	border: 4px solid #BDC3C7;
 	border-radius: 5px;
-
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-weight: 600;
 }
 .btn-applied:hover{
 	background: #BDC3C7;
@@ -108,9 +110,11 @@ body{
 }
 
 .btn-under-review{
-	border-bottom: 5px solid #F1C40F;
+	border: 4px solid #F1C40F;
 	border-radius: 5px;
-
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-weight: 600;
 }
 .btn-under-review:hover{
 	background: #F1C40F;
@@ -119,9 +123,11 @@ body{
 }
 
 .btn-interviewing{
-	border-bottom: 5px solid #3498DB;
+	border: 4px solid #3498DB;
 	border-radius: 5px;
-
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-weight: 600;
 }
 .btn-interviewing:hover{
 	background: #3498DB;
@@ -130,9 +136,11 @@ body{
 }
 
 .btn-offer-received{
-	border-bottom: 5px solid #2ECC71;
+	border: 4px solid #2ECC71;
 	border-radius: 5px;
-
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-weight: 600;
 }
 .btn-offer-received:hover{
 	background: #2ECC71;
@@ -141,9 +149,11 @@ body{
 }
 
 .btn-rejected{
-	border-bottom: 5px solid #E74C3C;
+	border: 4px solid #E74C3C;
 	border-radius: 5px;
-
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-weight: 600;
 }
 .btn-rejected:hover{
 	background: #E74C3C;
@@ -152,8 +162,11 @@ body{
 }
 
 .btn-show{
-	border-bottom: 5px solid black;
+	border: 4px solid black;
 	border-radius: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-weight: 600;
 }
 .btn-show:hover{
 	background: black;
@@ -181,21 +194,16 @@ body{
 	color: white;
 
 }
-
-
 .profile{
 	border-radius: 50px;
 	width: 40px;
 	box-shadow: 0 0 0 3px #5F27CD;
 	margin-right: 10px
 }
-
 .big-profile{
 	border-radius: 50%;
 	width: 100%;
 }
-
-
 /* HIDE RADIO */
 [type=radio] { 
   position: absolute;
