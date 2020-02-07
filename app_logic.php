@@ -28,7 +28,7 @@ if (isset($_POST['reset-password'])) {
 
     // Send email to user with the token in a link they can click on
     $to = $email;
-    $subject = "Reset your password on examplesite.com";
+    $subject = "Reset your password on Applyist";
     $msg = "Hi there, click on this <a href=\"new_password.php?token=" . $token . "\">link</a> to reset your password on our site";
     $msg = wordwrap($msg,70);
     $headers = "From: ntboland@gmail.com";

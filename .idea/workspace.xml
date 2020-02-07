@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0eadd3f6-8d1f-4929-9bb1-124fc3001b9d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/indexnav.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/indexnav.php" afterDir="false" />
-    </list>
+    <list default="true" id="0eadd3f6-8d1f-4929-9bb1-124fc3001b9d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +28,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../omnom" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -76,6 +71,7 @@
       <workItem from="1579786325469" duration="3285000" />
       <workItem from="1579925512613" duration="803000" />
       <workItem from="1580046804740" duration="1761000" />
+      <workItem from="1580254875828" duration="143000" />
     </task>
     <servers />
   </component>
@@ -83,10 +79,11 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2240" y="314" key="FileChooserDialogImpl" timestamp="1579737354469">
-      <screen x="1920" y="-387" width="1080" height="1890" />
+    <state x="2240" y="283" key="FileChooserDialogImpl" timestamp="1580255018286">
+      <screen x="1920" y="-418" width="1080" height="1890" />
     </state>
     <state x="2240" y="314" key="FileChooserDialogImpl/0.0.1920.1050/1920.-387.1080.1890@1920.-387.1080.1890" timestamp="1579737354469" />
+    <state x="2240" y="283" key="FileChooserDialogImpl/0.0.1920.1050/1920.-418.1080.1890@1920.-418.1080.1890" timestamp="1580255018286" />
     <state x="2294" y="478" key="NewPhpFileDialog" timestamp="1579649728978">
       <screen x="1920" y="-387" width="1080" height="1890" />
     </state>

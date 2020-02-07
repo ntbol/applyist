@@ -1,5 +1,5 @@
 body{
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
    font-weight: 300;
    margin:0px;
 	padding: 0;
@@ -243,13 +243,12 @@ body{
 .navbar-trans {
   background: transparent!important;
   z-index: 90;
-  position: fixed;
+  position: absolute;
   width: 100%;
 }
 
 #header {
-    height:1000px;
-    background-image: url('../img/test.svg');
+    height:auto;
     background-repeat: no-repeat;
     background-position: right;
 }
