@@ -1,10 +1,12 @@
-<?php 
+<?php
+
+require 'lib/password.php';
 
 session_start();
 $errors = [];
 $user_id = "";
 // connect to database
-$db = mysqli_connect('localhost:3308', 'apply', 'P@$$word', 'applyist');
+$db = mysqli_connect('mysql.applyist.nateboland.com', 'appylistadmin', '!@PAintman12', 'appylist_apply');
 
 
 if (isset($_POST['reset-password'])) {
@@ -29,9 +31,9 @@ if (isset($_POST['reset-password'])) {
     // Send email to user with the token in a link they can click on
     $to = $email;
     $subject = "Reset your password on examplesite.com";
-    $msg = "Hi there, click on this <a href=\"new_password.php?token=" . $token . "\">link</a> to reset your password on our site";
+    $msg = "Hi there, click on this <a href=\"applyist.nateboland.com/new_pass.php?token=" . $token . "\">link</a> to reset your password on our site";
     $msg = wordwrap($msg,70);
-    $headers = "From: ntboland@gmail.com";
+    $headers = "From: support@applyist.nateboland.com";
     mail($to, $subject, $msg, $headers);
     header('location: pending.php?email=' . $email);
   }
@@ -43,7 +45,7 @@ if (isset($_POST['new_password'])) {
   $new_pass_c = mysqli_real_escape_string($db, $_POST['new_pass_c']);
 
   // Grab to token that came from the email link
-  $token = $_SESSION['token'];
+  $token = $_GET['token'];
   if (empty($new_pass) || empty($new_pass_c)) array_push($errors, "Password is required");
   if ($new_pass !== $new_pass_c) array_push($errors, "Password do not match");
   if (count($errors) == 0) {
@@ -52,12 +54,10 @@ if (isset($_POST['new_password'])) {
     $results = mysqli_query($db, $sql);
     $email = mysqli_fetch_assoc($results)['email'];
 
-    if ($email) {
-      $new_pass = md5($new_pass);
-      $sql = "UPDATE users SET password='$new_pass' WHERE email='$email'";
+      $pass_hash = password_hash($new_pass, PASSWORD_BCRYPT, array("cost" => 12));
+      $sql = "UPDATE users SET password='$pass_hash' WHERE email='$email'";
       $results = mysqli_query($db, $sql);
       header('location: login.php');
-    }
   }
 }
 ?>

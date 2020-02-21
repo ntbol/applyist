@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `listings`;
 CREATE TABLE IF NOT EXISTS `listings` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -11,7 +10,6 @@ CREATE TABLE IF NOT EXISTS `listings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(25) COLLATE utf8_unicode_ci NOT NULL,

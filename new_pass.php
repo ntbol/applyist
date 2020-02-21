@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+    $token = $_GET['token'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +11,7 @@
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-	<form class="login-form" action="app_logic.php" method="post">
+	<form class="login-form" action="app_logic.php?token=<?=$token?>" method="post">
 		<h2 class="form-title">New password</h2>
 		<!-- form validation messages -->
 		<?php include('php/messages.php'); ?>

@@ -2,10 +2,10 @@
 
 //connect.php
 //MYSQL DB Details
-define('MYSQL_USER', 'apply');
-define('MYSQL_PASSWORD', 'P@$$word');
-define('MYSQL_HOST', 'localhost:3308');
-define('MYSQL_DATABASE', 'applyist');
+define('MYSQL_USER', 'appylistadmin');
+define('MYSQL_PASSWORD', '!@PAintman12');
+define('MYSQL_HOST', 'mysql.applyist.nateboland.com');
+define('MYSQL_DATABASE', 'appylist_apply');
 
 //PDO Options
 $pdoOptions = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

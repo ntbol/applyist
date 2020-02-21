@@ -1,4 +1,4 @@
-<?php include('app_logic.php'); ?>
+<?php require('app_logic.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

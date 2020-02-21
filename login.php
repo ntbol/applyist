@@ -2,10 +2,10 @@
     session_start();
 
     //Hashing file
-    require 'lib/password.php';
+    require '/lib/password.php';
 
     //MYSQL DB connection
-    require 'php/connect.php';
+    require '/php/connect.php';
 
     if(isset($_POST['login'])){
 

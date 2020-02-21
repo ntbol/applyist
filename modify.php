@@ -13,7 +13,8 @@
 		$stmt = $pdo->prepare("SELECT * FROM listings WHERE id = ?");
 		$stmt->execute([$_GET['listid']]);
 		$modify = $stmt->fetch(PDO::FETCH_ASSOC);
-}
+    }
+
     //Restricts access based on user id
 	if($_SESSION['user_id'] != $modify['userid']){
 		header('Location: dashboard.php');
