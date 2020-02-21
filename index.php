@@ -18,21 +18,22 @@
                         <h1 class="big" align="left" style="z-index: 1">
                             Organize Your<br>Job Search.
                         </h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id efficitur leo. Donec commodo in turpis ut congue. Etiam iaculis ornare libero at posuere. Donec in nunc quis tellus fermentum porta. </p>
+                        <p>During a job search Its not uncommon to be applying to multiple companies at once. Keeping this process organized can be a pain, but not to worry, we are here to help!
+                            Create a free account and see if you can create a more organized search.</p>
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
                                 <a href="register.php" class="btn btn-theme btn-block"><span class="fas fa-rocket"></span> Sign Up for Free</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-lg-6 d-none d-lg-block" style="padding-top: 28vh">
-                        <img src="img/person.svg" width="100%">
+                    <div class="col-lg-7 d-none d-lg-block" style="padding-top: 29vh">
+                        <img src="img/image.png" width="100%">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

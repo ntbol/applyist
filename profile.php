@@ -128,8 +128,6 @@
             <div class="col-md-6" style="padding-top: 15px;">
                 <h4 class="small-header-bold">Update Password</h4>
                 <form action="" method="post">
-                    <h5 class="form-info">Current Password :</h5>
-                    <input type="password" name="currentPassword" class="form-control">
                     <h5 class="form-info">New Password :</h5>
                     <input type="password" name="newPassword" class="form-control">
                     <h5 class="form-info">Confirm New Password :</h5>
