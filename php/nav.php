@@ -3,7 +3,7 @@
 <div class="container mobile-padding">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                    <a class="navbar-brand mobile-nav" href="dashboard.php"><h1 class="nav">applyist</h1></a>
+                    <a class="navbar-brand" href="dashboard.php"><h1 class="nav">applyist</h1></a>
                         <div class="dropdown show">
                             <a class="nav-link dropdown-toggle small-header" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <!-- <img src="img/<?=$user['profile_img']?>" class="profile"> --> <span style="font-weight: 600"><?=ucwords($user['username'])?></span>
