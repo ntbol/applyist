@@ -2,10 +2,10 @@
     session_start();
 
     //Hashing file
-    require '/lib/password.php';
+    require 'lib/password.php';
 
     //MYSQL DB connection
-    require '/php/connect.php';
+    require 'php/connect.php';
 
     if(isset($_POST['login'])){
 
@@ -36,7 +36,7 @@
             //password hash that we stored in our users table.
 
             //Compare the passwords.
-            $validPassword = password_verify($passwordAttempt, $user['password']);
+            $validPassword = password_verify($passwordAttempt, addslashes(htmlspecialchars($user['password'])));
 
             //If $validPassword is TRUE, the login has been successful.
             if($validPassword){
@@ -67,28 +67,32 @@
         <link rel="stylesheet" href="css/custom.css" type="text/css">
     </head>
     <body>
-    <?php include('php/regnav.php'); ?>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                <h1 class="job-title">Login</h1>
-                <form action="login.php" method="post">
-                    <div class="form-group">
-                        <input type="text" name="username" id="username" placeholder="username" placeholder="username" class="form-control">
+    <div id="page-container">
+        <div id="content-wrap">
+            <?php include('php/regnav.php'); ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <h1 class="job-title">Login</h1>
+                        <form action="login.php" method="post">
+                            <div class="form-group">
+                                <input type="text" name="username" id="username" placeholder="username" placeholder="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="password">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="login" value="Login" class="btn btn-theme btn-block">
+                            </div>
+                        </form>
+                        <p>Dont have an account? <a href="register.php">Register Here</a></p>
+                        <p><a href="forgot.php">Forgot Password?</a></p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="password" id="password" name="password" class="form-control" placeholder="password">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="login" value="Login" class="btn btn-theme btn-block">
-                    </div>
-                </form>
-                <p>Dont have an account? <a href="register.php">Register Here</a></p>
-                <p><a href="forgot.php">Forgot Password?</a></p>
                 </div>
             </div>
-        </div>
-
+        <?php include 'php/footer.php' ?>
+    </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="css/custom.css" type="text/css">
 </head>
 <body>
+<div id="page-container">
+    <div id="content-wrap">
     <?php include('php/indexnav.php'); ?>
 
     <div id="header">
         <div>
             <div class="container">
-                <div class="row">
-                    <div class="title col-lg-5 col-md-12" style="padding-top: 35vh">
-                        <h1 class="big" align="left" style="z-index: 1">
+                <div class="row" style="padding-bottom: 100px">
+                    <div class="title col-lg-5 col-md-12" style="padding-top: 20vh">
+                        <h1 class="big mobile-big" align="left" style="z-index: 1">
                             Organize Your<br>Job Search.
                         </h1>
                         <p>During a job search Its not uncommon to be applying to multiple companies at once. Keeping this process organized can be a pain, but not to worry, we are here to help!
@@ -26,14 +28,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7 d-none d-lg-block" style="padding-top: 29vh">
+                    <div class="col-lg-7 d-none d-lg-block" style="padding-top: 14vh">
                         <img src="img/image.png" width="100%">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    <?php include 'php/footer.php' ?>
 
+</div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

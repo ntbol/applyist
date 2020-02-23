@@ -4,8 +4,8 @@
 //MYSQL DB Details
 define('MYSQL_USER', 'appylistadmin');
 define('MYSQL_PASSWORD', '!@PAintman12');
-define('MYSQL_HOST', 'mysql.applyist.nateboland.com');
-define('MYSQL_DATABASE', 'appylist_apply');
+define('MYSQL_HOST', 'mysql.applyistapp.com');
+define('MYSQL_DATABASE', 'applyistapp');
 
 //PDO Options
 $pdoOptions = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

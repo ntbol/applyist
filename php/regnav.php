@@ -1,3 +1,6 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="./img/fav.png">
+<div class="container mobile-padding">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="dashboard.php"><h1 class="nav">applyist</h1></a>
@@ -20,3 +23,4 @@
             </div>
     </div>
 </nav>
+</div>

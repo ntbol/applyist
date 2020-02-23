@@ -61,32 +61,34 @@
         <link rel="stylesheet" href="css/custom.css" type="text/css">
     </head>
     <body>
-    <?php include('php/regnav.php'); ?>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                <h1 class="job-title">Register</h1>
-                <form action="register.php" method="post">
-                    <div class="form-group">
-                        <input type="text"  id="email" name="email" placeholder="email address" class="form-control">
+    <div id="page-container">
+        <div id="content-wrap">
+            <?php include('php/regnav.php'); ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <h1 class="job-title">Register</h1>
+                        <form action="register.php" method="post">
+                            <div class="form-group">
+                                <input type="text"  id="email" name="email" placeholder="email address" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  id="username" name="username" placeholder="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" name="password" placeholder="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="register" value="Register" class="btn btn-theme btn-block">
+                            </div>
+                        </form>
+                            <p>Have an account? <a href="login.php">Login Here</a></p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text"  id="username" name="username" placeholder="username" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="password" name="password" placeholder="password" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="register" value="Register" class="btn btn-theme btn-block">
-                    </div>
-                </form>
-                    <p>Have an account? <a href="login.php">Login Here</a></p>
                 </div>
             </div>
+            <?php include 'php/footer.php' ?>
         </div>
-
-
-
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

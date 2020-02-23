@@ -55,7 +55,7 @@
 	//Update Email Address
 	if ($_POST['newEmail'] == $_POST['confirmEmail']){
 		if(isset($_POST["updateEmail"])){
-			$email = $_POST['confirmEmail'];
+			$email = addslashes(htmlspecialchars($_POST['confirmEmail']));
 			try {
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
 			$sql = "UPDATE users SET email = '$email' WHERE id = '$userid'";
@@ -79,7 +79,7 @@
 	//Update Password
 	if ($_POST['newPassword'] == $_POST['confirmPassword']){
 		if(isset($_POST["updatePass"])){
-			$password = $_POST['confirmPassword'];
+			$password = addslashes(htmlspecialchars($_POST['confirmPassword']));
 			$passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
 			try {
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
@@ -112,88 +112,95 @@
         <link rel="stylesheet" href="css/custom.css" type="text/css">
     </head>
     <body>
-    <?php include('php/nav.php'); ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <a href="dashboard.php" class="btn btn-theme btn-block">Back to Dashboard</a>
-            </div>
-            <div class="col-md-9" align="right">
+    <div id="page-container">
+        <div id="content-wrap">
+        <?php include('php/nav.php'); ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="dashboard.php" class="btn btn-theme btn-block">Back to Dashboard</a>
+                </div>
+                <div class="col-md-9" align="right">
 
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <!-- Change Password -->
+                <div class="col-md-6" style="padding-top: 15px;">
+                    <h4 class="small-header-bold">Update Password</h4>
+                    <form action="" method="post">
+                        <h5 class="form-info">New Password :</h5>
+                        <input type="password" name="newPassword" class="form-control">
+                        <h5 class="form-info">Confirm New Password :</h5>
+                        <input type="password" name="confirmPassword" class="form-control">
+                        <div style="padding-top: 15px">
+                            <input type="submit" name="updatePass" class="btn btn-theme btn-block" value="Update Password">
+                        </div>
+                    </form>
+                </div>
+                <!-- Change Email -->
+                <div class="col-md-6" style="padding-top: 15px;">
+                    <h4 class="small-header-bold">Update Email</h4>
+                    <form action="" method="post">
+                        <h5 class="form-info">Current Email :</h5>
+                        <input type="email" name="currentEmail" class="form-control" value="<?=$user['email']?>">
+                        <h5 class="form-info">New Email :</h5>
+                        <input type="email" name="newEmail" class="form-control">
+                        <h5 class="form-info">Confirm New Email :</h5>
+                        <input type="email" name="confirmEmail" class="form-control">
+                        <div style="padding-top: 15px">
+                            <input type="submit" name="updateEmail" class="btn btn-theme btn-block" value="Update Email">
+                        </div>
+                    </form>
+                </div>
+                <!-- Change Profile Img -->
+                <!--
+                <div class="col-md-12" style="padding-top: 35px;">
+                    <h4 class="small-header-bold">Update Profile Picture</h4>
+                    <form action="" method="post">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
+                                <label>
+                                  <input type="radio" name="test" value="gray.jpg">
+                                  <img src="img/gray.jpg" class="big-profile">
+                                </label>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
+                                <label>
+                                  <input type="radio" name="test" value="yellow.jpg">
+                                  <img src="img/yellow.jpg" class="big-profile">
+                                </label>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
+                                <label>
+                                  <input type="radio" name="test" value="blue.jpg">
+                                  <img src="img/blue.jpg" class="big-profile">
+                                </label>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
+                                <label>
+                                  <input type="radio" name="test" value="green.jpg">
+                                  <img src="img/green.jpg" class="big-profile">
+                                </label>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
+                                <label>
+                                  <input type="radio" name="test" value="red.jpg">
+                                  <img src="img/red.jpg" class="big-profile">
+                                </label>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
+                                <input type="submit" name="updatePic" class="btn btn-theme-round btn-block" value="Update">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                -->
             </div>
         </div>
-        <hr>
-        <div class="row">
-            <!-- Change Password -->
-            <div class="col-md-6" style="padding-top: 15px;">
-                <h4 class="small-header-bold">Update Password</h4>
-                <form action="" method="post">
-                    <h5 class="form-info">New Password :</h5>
-                    <input type="password" name="newPassword" class="form-control">
-                    <h5 class="form-info">Confirm New Password :</h5>
-                    <input type="password" name="confirmPassword" class="form-control">
-                    <div style="padding-top: 15px">
-                        <input type="submit" name="updatePass" class="btn btn-theme btn-block" value="Update Password">
-                    </div>
-                </form>
-            </div>
-            <!-- Change Email -->
-            <div class="col-md-6" style="padding-top: 15px;">
-                <h4 class="small-header-bold">Update Email</h4>
-                <form action="" method="post">
-                    <h5 class="form-info">Current Email :</h5>
-                    <input type="email" name="currentEmail" class="form-control" value="<?=$user['email']?>">
-                    <h5 class="form-info">New Email :</h5>
-                    <input type="email" name="newEmail" class="form-control">
-                    <h5 class="form-info">Confirm New Email :</h5>
-                    <input type="email" name="confirmEmail" class="form-control">
-                    <div style="padding-top: 15px">
-                        <input type="submit" name="updateEmail" class="btn btn-theme btn-block" value="Update Email">
-                    </div>
-                </form>
-            </div>
-            <!-- Change Profile Img -->
-            <div class="col-md-12" style="padding-top: 35px;">
-                <h4 class="small-header-bold">Update Profile Picture</h4>
-                <form action="" method="post">
-                    <div class="row">
-                        <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
-                            <label>
-                              <input type="radio" name="test" value="gray.jpg">
-                              <img src="img/gray.jpg" class="big-profile">
-                            </label>
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
-                            <label>
-                              <input type="radio" name="test" value="yellow.jpg">
-                              <img src="img/yellow.jpg" class="big-profile">
-                            </label>
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
-                            <label>
-                              <input type="radio" name="test" value="blue.jpg">
-                              <img src="img/blue.jpg" class="big-profile">
-                            </label>
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
-                            <label>
-                              <input type="radio" name="test" value="green.jpg">
-                              <img src="img/green.jpg" class="big-profile">
-                            </label>
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
-                            <label>
-                              <input type="radio" name="test" value="red.jpg">
-                              <img src="img/red.jpg" class="big-profile">
-                            </label>
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-4 col-4" style="padding-top: 15px;">
-                            <input type="submit" name="updatePic" class="btn btn-theme-round btn-block" value="Update">
-                        </div>
-                    </div>
-                </form>
-            </div>
         </div>
+        <?php include 'php/footer.php' ?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

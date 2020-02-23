@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="../css/custom.css" type="text/css">
 </head>
 <body>
-<?php include('indexnav.php'); ?>
-<div class="container" style="padding-top: 150px">
-    <h1 class="big">:(</h1>
-    <h3>Looks like you entered an incorrect email/password</h3>
-    <a href="../login.php" class="btn btn-theme">Go back to login</a>
+<div id="page-container">
+    <div id="content-wrap">
+        <?php include('indexnav.php'); ?>
+        <div class="container" style="padding-top: 150px">
+            <h1 class="big">:(</h1>
+            <h3>Looks like you entered an incorrect email/password</h3>
+            <a href="../login.php" class="btn btn-theme">Go back to login</a>
+        </div>
+    </div>
+    <?php include 'footer.php' ?>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

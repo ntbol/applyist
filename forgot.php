@@ -9,23 +9,28 @@
     <link rel="stylesheet" href="css/custom.css" type="text/css">
 </head>
 <body>
-    <?php include('php/regnav.php'); ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h1 class="job-title">Reset password</h1>
-                <form action="forgot.php" method="post">
-                    <!-- form validation messages -->
-                    <?php include('php/messages.php'); ?>
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="reset-password" value="Reset" class="btn btn-theme btn-block">
-                    </div>
-                </form>
+<div id="page-container">
+    <div id="content-wrap">
+        <?php include('php/regnav.php'); ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="job-title">Reset password</h1>
+                    <form action="forgot.php" method="post">
+                        <!-- form validation messages -->
+                        <?php include('php/messages.php'); ?>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="reset-password" value="Reset" class="btn btn-theme btn-block">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+    <?php include 'php/footer.php' ?>
+</div>
 </body>
 </html>

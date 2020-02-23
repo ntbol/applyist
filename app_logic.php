@@ -6,11 +6,11 @@ session_start();
 $errors = [];
 $user_id = "";
 // connect to database
-$db = mysqli_connect('mysql.applyist.nateboland.com', 'appylistadmin', '!@PAintman12', 'appylist_apply');
+$db = mysqli_connect('mysql.applyistapp.com', 'appylistadmin', '!@PAintman12', 'applyistapp');
 
 
 if (isset($_POST['reset-password'])) {
-    $email = $_POST['email'];
+    $email = addslashes(htmlspecialchars($_POST['email']));
     // ensure that the user exists on our system
     $query = "SELECT email FROM users WHERE email='$email'";
     $results = mysqli_query($db, $query);
@@ -30,10 +30,25 @@ if (isset($_POST['reset-password'])) {
 
         // Send email to user with the token in a link they can click on
         $to = $email;
-        $subject = "Reset your password on examplesite.com";
-        $msg = "Hi there, click on this <a href=\"applyist.nateboland.com/new_pass.php?token=" . $token . "\">link</a> to reset your password on our site";
+        $subject = "Reset your password on Applyist";
+        $msg = "
+           <html>
+                <head>
+                    <title>Reset your password on Applyist</title>
+                </head>
+                <body>
+                    <h2>Oh no!</h2>
+                    <h4>Looks like you lost your password :(</h4>
+                    <h4>Dont worry <a href=\"applyistapp.com/new_pass.php?token=" . $token . "\"><b> we got you</b></a>!</h4>
+                    <p style = 'margin-bottom: 0px'> -Applyist Support </p>
+                    <img src = 'applyistapp.com/img/applyemaillogo.png' width ='120px'>
+                </body>
+            </html>
+        ";
         $msg = wordwrap($msg,70);
-        $headers = "From: support@applyist.nateboland.com";
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= "From: support@applyistapp.com" . "\r\n";
         mail($to, $subject, $msg, $headers);
         header('location: pending.php?email=' . $email);
     }
@@ -41,11 +56,11 @@ if (isset($_POST['reset-password'])) {
 
 // ENTER A NEW PASSWORD
 if (isset($_POST['new_password'])) {
-    $new_pass = mysqli_real_escape_string($db, $_POST['new_pass']);
-    $new_pass_c = mysqli_real_escape_string($db, $_POST['new_pass_c']);
+    $new_pass = mysqli_real_escape_string($db, addslashes(htmlspecialchars($_POST['new_pass'])));
+    $new_pass_c = mysqli_real_escape_string($db, addslashes(htmlspecialchars($_POST['new_pass_c'])));
 
     // Grab to token that came from the email link
-    $token = $_GET['token'];
+    $token = addslashes(htmlspecialchars($_GET['token']));
     if (empty($new_pass) || empty($new_pass_c)) array_push($errors, "Password is required");
     if ($new_pass !== $new_pass_c) array_push($errors, "Password do not match");
     if (count($errors) == 0) {

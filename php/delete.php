@@ -6,7 +6,7 @@ if(isset($_POST["remove"])){
 	$id = $_SESSION['deleteid'];
 	$sql = "DELETE FROM listings WHERE id = '$id'";
 	$pdo->exec($sql);
-	echo "Record deleted successfully";
+        header ('Location: dashboard.php');
     }
 	catch(PDOException $e)
     {
