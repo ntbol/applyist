@@ -6,7 +6,7 @@ session_start();
 $errors = [];
 $user_id = "";
 // connect to database
-$db = mysqli_connect('mysql.applyistapp.com', 'appylistadmin', '!@PAintman12', 'applyistapp');
+$db = mysqli_connect('localhost', 'admin', '', 'database');
 
 
 if (isset($_POST['reset-password'])) {
